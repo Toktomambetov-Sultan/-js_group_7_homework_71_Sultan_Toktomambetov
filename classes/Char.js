@@ -2,10 +2,16 @@ const add = (display, txt = "") => {
   return display + txt;
 };
 class CalculateUnit {
-  constructor(char, { disabled, func } = { disabled: false }) {
+  constructor(char, { disabled, func, callback } = { disabled: false }) {
     this.char = char;
-    this.display;
-    this.func = isNaN(+this.char) ? func : (display) => display + this.char;
+    this.func = (display) => {
+      callback ? callback() : null;
+      if (isNaN(+this.char)) {
+        return func(display);
+      } else {
+        return display + this.char;
+      }
+    };
     this.disabled = disabled;
   }
 
