@@ -12,7 +12,7 @@ class FormatDisplay {
       }
     });
   }
-  update() {
+  update=()=> {
     this.numbers = [""];
     this.operations = [];
   }
