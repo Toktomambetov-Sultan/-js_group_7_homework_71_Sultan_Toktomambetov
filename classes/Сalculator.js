@@ -14,7 +14,6 @@ const GetCalculateUnits = (display) => {
 
     new CalculateUnit("%", {
       callback: () => {
-        console.log(format.numbers[1]);
         if (format.numbers.length === 1) {
           format.numbers[0] /= 100;
         } else {
